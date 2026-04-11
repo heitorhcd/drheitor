@@ -1,0 +1,462 @@
+
+<!-- saved from url=(0054)file:///C:/Users/heito/Downloads/dr-heitor-site_1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./dr-heitor-site_1_files/css2" rel="stylesheet">
+
+<style>
+#drheitor {
+  --verde: #0a5c3f;
+  --verde-mid: #0f7a52;
+  --verde-light: #e6f4ee;
+  --verde-accent: #1ca86e;
+  --ouro: #c8963e;
+  --ouro-light: #fdf3e3;
+  --text-dark: #1a1a1a;
+  --text-mid: #444;
+  --text-muted: #777;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --border: #e0e0d8;
+  --radius: 12px;
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.7;
+}
+#drheitor *, #drheitor *::before, #drheitor *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#drheitor h1, #drheitor h2, #drheitor h3, #drheitor h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+
+/* NAV */
+#drheitor nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  padding: 0 2rem; display: flex; align-items: center;
+  justify-content: space-between; height: 68px;
+}
+#drheitor .nav-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--verde); font-weight: 600; text-decoration: none; line-height: 1.3; }
+#drheitor .nav-brand span { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+#drheitor .nav-links { display: flex; gap: 2rem; list-style: none; }
+#drheitor .nav-links a { font-size: 14px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+#drheitor .nav-links a:hover { color: var(--verde); }
+#drheitor .nav-cta { background: var(--verde); color: var(--white) !important; padding: 9px 20px; border-radius: 50px; font-weight: 500 !important; font-size: 13px !important; }
+#drheitor .nav-cta:hover { background: var(--verde-mid) !important; }
+
+/* SECTIONS */
+#drheitor section { display: none; }
+#drheitor section.active { display: block; }
+
+/* HERO */
+#drheitor .hero { background: var(--verde); color: var(--white); padding: 7rem 2rem 5rem; position: relative; overflow: hidden; }
+#drheitor .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+#drheitor .hero::after { content: ''; position: absolute; bottom: -60px; left: 60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.03); }
+#drheitor .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+#drheitor .hero-badge { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 1.75rem; }
+#drheitor .hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 500; color: var(--white); margin-bottom: 1.25rem; max-width: 640px; }
+#drheitor .hero p { font-size: 17px; color: rgba(255,255,255,0.82); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; }
+#drheitor .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* BUTTONS */
+#drheitor .btn-primary { background: var(--ouro); color: var(--white); padding: 14px 30px; border-radius: 50px; font-size: 15px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; display: inline-block; }
+#drheitor .btn-primary:hover { background: #b8842e; transform: translateY(-1px); }
+#drheitor .btn-outline-white { background: transparent; color: var(--white); padding: 14px 30px; border-radius: 50px; font-size: 15px; font-weight: 400; text-decoration: none; border: 1px solid rgba(255,255,255,0.4); cursor: pointer; display: inline-block; }
+#drheitor .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
+
+/* STATS BAR */
+#drheitor .stats-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; }
+#drheitor .stats-inner { max-width: 760px; margin: 0 auto; display: flex; gap: 2.5rem; flex-wrap: wrap; }
+#drheitor .stat { display: flex; flex-direction: column; }
+#drheitor .stat-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: var(--verde); }
+#drheitor .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* LAYOUT */
+#drheitor .content-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+#drheitor .section-title { font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 500; color: var(--text-dark); margin-bottom: 0.6rem; }
+#drheitor .section-subtitle { font-size: 16px; color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 300; }
+#drheitor .green-line { width: 48px; height: 3px; background: var(--verde-accent); border-radius: 2px; margin-bottom: 1.5rem; }
+#drheitor .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+/* CARDS */
+#drheitor .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+#drheitor .card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+#drheitor .card-icon { font-size: 24px; margin-bottom: 0.75rem; display: block; }
+#drheitor .card h3 { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-dark); margin-bottom: 0.5rem; }
+#drheitor .card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+/* SYMPTOMS */
+#drheitor .symptoms-box { background: var(--verde-light); border: 1px solid #b8deca; border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; }
+#drheitor .symptoms-box h3 { font-size: 17px; color: var(--verde); margin-bottom: 1.25rem; }
+#drheitor .symptoms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem 1.5rem; }
+#drheitor .symptom-item { font-size: 14px; color: var(--text-mid); display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+#drheitor .symptom-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--verde-accent); flex-shrink: 0; }
+
+/* ALERT */
+#drheitor .alert-box { background: #fff8e6; border: 1px solid #e8c97a; border-left: 4px solid var(--ouro); border-radius: var(--radius); padding: 1.25rem 1.5rem; font-size: 14px; color: #6b4c10; line-height: 1.65; }
+
+/* ABOUT */
+#drheitor .about-profile { display: flex; gap: 2.5rem; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; }
+#drheitor .about-photo-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+#drheitor .about-photo { width: 180px; height: 220px; border-radius: var(--radius); background: var(--verde-light); border: 2px dashed #8ecdb0; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; position: relative; transition: border-color 0.2s; }
+#drheitor .about-photo:hover { border-color: var(--verde); }
+#drheitor .about-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); display: none; }
+#drheitor .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 1rem; text-align: center; }
+#drheitor .photo-placeholder .ph-icon { font-size: 36px; }
+#drheitor .photo-placeholder p { font-size: 12px; color: var(--verde); font-weight: 500; line-height: 1.4; }
+#drheitor .photo-hint { font-size: 11px; color: var(--text-muted); text-align: center; max-width: 180px; line-height: 1.5; }
+#drheitor .photo-input { display: none; }
+#drheitor .photo-btn { background: var(--verde-light); color: var(--verde); border: 1px solid #8ecdb0; border-radius: 50px; padding: 7px 16px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+#drheitor .photo-btn:hover { background: #c5e8d6; }
+#drheitor .about-text { flex: 1; min-width: 240px; }
+#drheitor .about-text h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+#drheitor .about-text .role-badge { display: inline-block; background: var(--verde-light); color: var(--verde); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 50px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+#drheitor .about-text p { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
+
+/* CREDENTIALS */
+#drheitor .credentials { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; }
+#drheitor .credentials h3 { font-size: 17px; margin-bottom: 1.25rem; color: var(--text-dark); }
+#drheitor .cred-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-mid); }
+#drheitor .cred-item:last-child { border-bottom: none; }
+#drheitor .cred-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--verde-accent); flex-shrink: 0; }
+
+/* SERVICES */
+#drheitor .service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; margin-bottom: 1.25rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+#drheitor .service-icon { width: 48px; height: 48px; background: var(--verde-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+#drheitor .service-info h3 { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; color: var(--text-dark); margin-bottom: 0.4rem; }
+#drheitor .service-info p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.5rem; }
+#drheitor .service-tag { display: inline-block; background: var(--ouro-light); color: #7a5520; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 50px; }
+
+/* CONTACT */
+#drheitor .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+#drheitor .contact-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
+#drheitor .contact-card .icon { font-size: 28px; margin-bottom: 0.75rem; display: block; }
+#drheitor .contact-card h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; }
+#drheitor .contact-card p { font-size: 13px; color: var(--text-muted); }
+#drheitor .contact-card a { font-size: 14px; color: var(--verde); text-decoration: none; font-weight: 500; display: block; margin-top: 0.4rem; }
+#drheitor .cta-banner { background: var(--verde); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; color: var(--white); margin-bottom: 2rem; }
+#drheitor .cta-banner h2 { font-size: 1.8rem; margin-bottom: 0.75rem; color: var(--white); }
+#drheitor .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 1.75rem; font-weight: 300; }
+#drheitor .legal-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+/* PAGE HERO */
+#drheitor .page-hero { background: linear-gradient(135deg, #0a5c3f 0%, #073d29 100%); color: #fff; padding: 4rem 2rem 3rem; }
+#drheitor .page-hero-inner { max-width: 760px; margin: 0 auto; }
+#drheitor .page-hero h1 { font-size: clamp(1.7rem,4vw,2.6rem); font-weight: 500; color: #fff; margin-bottom: 0.6rem; }
+#drheitor .page-hero p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; }
+
+/* FOOTER */
+#drheitor footer { background: #1a1a1a; color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 13px; line-height: 1.8; }
+#drheitor footer strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+#drheitor .footer-emergency { margin-top: 0.75rem; color: #f0a060; font-size: 13px; }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  #drheitor .nav-links { display: none; }
+  #drheitor .about-profile { flex-direction: column; align-items: center; }
+  #drheitor .stats-inner { gap: 1.5rem; }
+  #drheitor .service-card { flex-direction: column; gap: 1rem; }
+}
+</style>
+
+</head><body><div id="drheitor">
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-brand" href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;home&#39;); return false;">
+      Dr. Heitor Campelo Duarte
+      <span>Médico de Urgência Online</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;home&#39;); return false;">Início</a></li>
+      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;sobre&#39;); return false;">Sobre</a></li>
+      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;servicos&#39;); return false;">Serviços</a></li>
+      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;contato&#39;); return false;" class="nav-cta">Agendar Consulta</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HOME ══ -->
+  <section id="drh-home" class="">
+
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-badge">✦ Telemedicina · Disponível 24h</div>
+        <h1>Atendimento Médico de Urgência Online — Rápido, Seguro e Humanizado</h1>
+        <p>Consultas por videochamada com o Dr. Heitor Campelo Duarte. Sem filas, sem deslocamento, disponível a qualquer hora do dia ou da noite.</p>
+        <div class="hero-btns">
+          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" class="btn-primary" onclick="drShowPage(&#39;contato&#39;); return false;">Agendar Consulta Agora</a>
+          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" class="btn-outline-white" onclick="drShowPage(&#39;servicos&#39;); return false;">Ver Serviços</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Disponibilidade</span></div>
+        <div class="stat"><span class="stat-num">Online</span><span class="stat-label">100% por videochamada</span></div>
+        <div class="stat"><span class="stat-num">Legal</span><span class="stat-label">Conforme CFM nº 2.314/2022</span></div>
+        <div class="stat"><span class="stat-num">Digital</span><span class="stat-label">Receitas e atestados válidos</span></div>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+      <div class="green-line"></div>
+      <h2 class="section-title">Por que escolher o Dr. Heitor?</h2>
+      <p class="section-subtitle">Cuidado médico de excelência, onde quer que você esteja.</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-icon">🩺</span>
+          <h3>Atendimento Humanizado</h3>
+          <p>Consultas personalizadas com escuta ativa, respeito e cuidado. Você não é um número — você é um paciente.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">⏱</span>
+          <h3>Disponível 24h</h3>
+          <p>Urgências não têm hora marcada. Atendimento a qualquer momento, incluindo finais de semana e feriados.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📱</span>
+          <h3>Totalmente Online</h3>
+          <p>Por videochamada no seu celular, tablet ou computador. Sem sair de casa, sem exposição a ambientes hospitalares.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="green-line"></div>
+      <h2 class="section-title">O que posso atender?</h2>
+      <p class="section-subtitle">Principais queixas e sintomas tratados nas consultas online.</p>
+
+      <div class="symptoms-box">
+        <h3>Condições atendidas por telemedicina</h3>
+        <div class="symptoms-grid">
+          <span class="symptom-item">Febre, gripe e resfriado</span>
+          <span class="symptom-item">Dores de cabeça e enxaqueca</span>
+          <span class="symptom-item">Dor de garganta e infecções respiratórias</span>
+          <span class="symptom-item">Alergias e reações leves</span>
+          <span class="symptom-item">Dores musculares e articulares</span>
+          <span class="symptom-item">Náusea, vômito e diarreia</span>
+          <span class="symptom-item">Infecções urinárias</span>
+          <span class="symptom-item">Receitas e renovação de prescrição</span>
+          <span class="symptom-item">Orientação e triagem de sintomas</span>
+          <span class="symptom-item">Dúvidas sobre medicamentos</span>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        ⚠️ <strong>Atenção:</strong> Emergências graves como infarto, AVC e trauma severo exigem atendimento presencial imediato. Ligue para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SOBRE ══ -->
+  <section id="drh-sobre" class="active">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Conheça o Dr. Heitor Campelo Duarte</h1>
+        <p>Médico com experiência em urgência e emergência, agora também disponível online.</p>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+
+      <div class="about-profile">
+
+        <!-- ÁREA DE FOTO DO MÉDICO -->
+        <div class="about-photo-wrap">
+          <div class="about-photo" id="drh-photo-area" onclick="document.getElementById(&#39;drh-photo-input&#39;).click()">
+            <div class="photo-placeholder" id="drh-photo-placeholder">
+              <span class="ph-icon">📷</span>
+              <p>Clique para adicionar a foto</p>
+            </div>
+            <img id="drh-photo-img" alt="Dr. Heitor Campelo Duarte">
+          </div>
+          <input type="file" id="drh-photo-input" class="photo-input" accept="image/*">
+          <p class="photo-hint">Clique na área acima ou no botão para carregar a foto do Dr. Heitor</p>
+          <button class="photo-btn" onclick="document.getElementById(&#39;drh-photo-input&#39;).click()">📂 Escolher foto</button>
+        </div>
+
+        <div class="about-text">
+          <h2>Dr. Heitor Campelo Duarte</h2>
+          <span class="role-badge">Médico de Urgência Online</span>
+          <p>O Dr. Heitor Campelo Duarte é médico formado com sólida experiência em urgência e emergência. Ao longo de sua trajetória, atuou em prontos-socorros e unidades de pronto atendimento (UPAs), desenvolvendo uma visão clínica apurada para diagnóstico ágil e tratamento eficaz.</p>
+          <p>Acreditando que o acesso à saúde de qualidade deve ser simples e rápido, o Dr. Heitor expandiu sua atuação para o atendimento médico online, levando cuidado médico de excelência diretamente até você — onde quer que você esteja.</p>
+          <p>Seu compromisso é com a saúde e o bem-estar de cada paciente, oferecendo um atendimento técnico, empático e acessível.</p>
+        </div>
+      </div>
+
+      <div class="credentials">
+        <h3>Formação e Credenciais</h3>
+        <div class="cred-item"><span class="cred-dot"></span>Graduação em Medicina</div>
+        <div class="cred-item"><span class="cred-dot"></span>Experiência em urgência e emergência hospitalar</div>
+        <div class="cred-item"><span class="cred-dot"></span>Atuação em UPAs e prontos-socorros</div>
+        <div class="cred-item"><span class="cred-dot"></span>Telemedicina conforme Resolução CFM nº 2.314/2022</div>
+        <div class="cred-item"><span class="cred-dot"></span>CRM ativo — [inserir número do CRM]</div>
+      </div>
+
+      <div class="alert-box">
+        💡 Tem dúvidas sobre se seu caso pode ser atendido online? Entre em contato e o Dr. Heitor orienta o melhor caminho para o seu cuidado.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVIÇOS ══ -->
+  <section id="drh-servicos" class="">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Serviços de Atendimento Médico Online</h1>
+        <p>Consultas completas por videochamada, com documentos médicos digitais de validade legal.</p>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+      <div class="green-line"></div>
+      <h2 class="section-title">O que oferecemos</h2>
+      <p class="section-subtitle">Atendimento médico de urgência do dia a dia, sem sair de casa.</p>
+
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <div class="service-info">
+          <h3>Consulta de Urgência Online</h3>
+          <p>Atendimento imediato para sintomas agudos: febre, dor intensa, mal-estar, infecções e outros. O médico avalia, orienta e prescreve quando necessário.</p>
+          <span class="service-tag">Duração: 20 a 40 minutos</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <div class="service-info">
+          <h3>Emissão de Atestado Médico</h3>
+          <p>Atestados médicos digitais com validade legal, emitidos após avaliação clínica. Aceitos para justificativa de ausência no trabalho ou escola.</p>
+          <span class="service-tag">Com assinatura digital válida</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <div class="service-info">
+          <h3>Receita Médica Digital</h3>
+          <p>Prescrição de medicamentos conforme avaliação clínica. Receitas digitais com assinatura eletrônica, aceitas em farmácias de todo o Brasil.</p>
+          <span class="service-tag">Válida em todo território nacional</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <div class="service-info">
+          <h3>Triagem e Orientação de Sintomas</h3>
+          <p>Não sabe se precisa ir ao pronto-socorro? O Dr. Heitor avalia seus sintomas e orienta o melhor caminho: tratamento domiciliar, medicação ou encaminhamento presencial.</p>
+          <span class="service-tag">Decisão informada e segura</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <div class="service-info">
+          <h3>Solicitação de Exames</h3>
+          <p>Pedidos de exames laboratoriais e de imagem quando clinicamente indicados, com orientação sobre os resultados em consulta de retorno.</p>
+          <span class="service-tag">Laudos e pedidos digitais</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="alert-box">
+        ⚠️ Os serviços de telemedicina são prestados em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTATO ══ -->
+  <section id="drh-contato">
+
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Agende sua Consulta de Urgência</h1>
+        <p>Disponível 24 horas por dia, 7 dias por semana — incluindo feriados.</p>
+      </div>
+    </div>
+
+    <div class="content-wrap">
+      <div class="green-line"></div>
+      <h2 class="section-title">Fale conosco</h2>
+      <p class="section-subtitle">Escolha o canal de sua preferência para agendar ou tirar dúvidas.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="icon">📲</span>
+          <h3>WhatsApp</h3>
+          <p>Mais rápido para urgências</p>
+          <a href="https://wa.me/SEUNUMERO" target="_blank">[inserir número]</a>
+        </div>
+        <div class="contact-card">
+          <span class="icon">📧</span>
+          <h3>E-mail</h3>
+          <p>Para dúvidas e agendamentos</p>
+          <a href="mailto:[inserir email]">[inserir e-mail]</a>
+        </div>
+        <div class="contact-card">
+          <span class="icon">🖥</span>
+          <h3>Agendamento Online</h3>
+          <p>Plataforma de telemedicina</p>
+          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" target="_blank">[inserir link]</a>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <h2>Precisa de atendimento agora?</h2>
+        <p>Não espere. Entre em contato e receba orientação médica de qualidade em minutos, direto no seu celular ou computador.</p>
+        <a href="https://wa.me/SEUNUMERO" class="btn-primary" target="_blank">Chamar no WhatsApp</a>
+      </div>
+
+      <div class="legal-box">
+        Este serviço de telemedicina é prestado em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Dr. Heitor Campelo Duarte</strong> — CRM [inserir número]<br>
+    Médico de Urgência Online · Telemedicina conforme Resolução CFM nº 2.314/2022<br>
+    © 2025 — Todos os direitos reservados
+    <div class="footer-emergency">⚠️ Emergências: SAMU 192 · Bombeiros 193 · Polícia 190</div>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  var pages = ['home','sobre','servicos','contato'];
+  window.drShowPage = function(id) {
+    pages.forEach(function(p) {
+      var el = document.getElementById('drh-' + p);
+      if (el) el.classList.remove('active');
+    });
+    var target = document.getElementById('drh-' + id);
+    if (target) {
+      target.classList.add('active');
+      var wrap = document.getElementById('drheitor');
+      if (wrap) wrap.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  var photoInput = document.getElementById('drh-photo-input');
+  if (photoInput) {
+    photoInput.addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev) {
+        var img = document.getElementById('drh-photo-img');
+        var placeholder = document.getElementById('drh-photo-placeholder');
+        if (img) { img.src = ev.target.result; img.style.display = 'block'; }
+        if (placeholder) placeholder.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+})();
+</script>
+</body></html>
