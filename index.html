@@ -423,22 +423,6 @@
       if (wrap) wrap.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  var photoInput = document.getElementById('drh-photo-input');
-  if (photoInput) {
-    photoInput.addEventListener('change', function(e) {
-      var file = e.target.files[0];
-      if (!file) return;
-      var reader = new FileReader();
-      reader.onload = function(ev) {
-        var img = document.getElementById('drh-photo-img');
-        var placeholder = document.getElementById('drh-photo-placeholder');
-        if (img) { img.src = ev.target.result; img.style.display = 'block'; }
-        if (placeholder) placeholder.style.display = 'none';
-      };
-      reader.readAsDataURL(file);
-    });
-  }
 })();
 </script>
 </body></html>
