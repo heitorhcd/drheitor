@@ -94,19 +94,9 @@
 #drheitor .alert-box { background: #fff8e6; border: 1px solid #e8c97a; border-left: 4px solid var(--ouro); border-radius: var(--radius); padding: 1.25rem 1.5rem; font-size: 14px; color: #6b4c10; line-height: 1.65; }
 
 /* ABOUT */
-#drheitor .about-profile { display: flex; gap: 2.5rem; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; }
-#drheitor .about-photo-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
-#drheitor .about-photo { width: 180px; height: 220px; border-radius: var(--radius); background: var(--verde-light); border: 2px dashed #8ecdb0; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; cursor: pointer; position: relative; transition: border-color 0.2s; }
-#drheitor .about-photo:hover { border-color: var(--verde); }
-#drheitor .about-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); display: none; }
-#drheitor .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 1rem; text-align: center; }
-#drheitor .photo-placeholder .ph-icon { font-size: 36px; }
-#drheitor .photo-placeholder p { font-size: 12px; color: var(--verde); font-weight: 500; line-height: 1.4; }
-#drheitor .photo-hint { font-size: 11px; color: var(--text-muted); text-align: center; max-width: 180px; line-height: 1.5; }
-#drheitor .photo-input { display: none; }
-#drheitor .photo-btn { background: var(--verde-light); color: var(--verde); border: 1px solid #8ecdb0; border-radius: 50px; padding: 7px 16px; font-size: 12px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
-#drheitor .photo-btn:hover { background: #c5e8d6; }
-#drheitor .about-text { flex: 1; min-width: 240px; }
+#drheitor .about-profile { display: grid; gap: 2.5rem; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; }
+#drheitor .about-pic {position: relative;left: -100;width: 35%;float: left;}
+#drheitor .about-text {position: relative;width: 65%;float: left; flex: 1; min-width: 240px; }
 #drheitor .about-text h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
 #drheitor .about-text .role-badge { display: inline-block; background: var(--verde-light); color: var(--verde); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 50px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
 #drheitor .about-text p { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
@@ -264,10 +254,10 @@
       <div class="about-profile">
 
         <!-- ÁREA DE FOTO DO MÉDICO -->
-        <div style="position: relative;left: -100;width: 35%;float: left;">
+        <div class="about-pic">
           <img src="images\2.png" style="width:300px; height:auto;> </img>   
         </div>  
-        <div class="about-text" style="position: relative;width: 65%;float: left;">
+        <div class="about-text">
           <h2>Dr. Heitor Campelo Duarte</h2>
           <span class="role-badge">Médico de Urgência Online</span>
           <p>O Dr. Heitor Campelo Duarte é médico formado com sólida experiência em urgência e emergência. Ao longo de sua trajetória, atuou em prontos-socorros e unidades de pronto atendimento (UPAs), desenvolvendo uma visão clínica apurada para diagnóstico ágil e tratamento eficaz.</p>
