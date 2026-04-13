@@ -1,6 +1,11 @@
 
-<!-- saved from url=(0054)file:///C:/Users/heito/Downloads/dr-heitor-site_1.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./dr-heitor-site_1_files/css2" rel="stylesheet">
+<!-- ============================================================
+     SITE DR. HEITOR CAMPELO DUARTE — MÉDICO DE URGÊNCIA ONLINE
+     Cole este bloco inteiro em: WordPress > Páginas > Adicionar nova
+     > Adicionar bloco > "HTML Personalizado"
+     ============================================================ -->
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 #drheitor {
@@ -36,11 +41,29 @@
 }
 #drheitor .nav-brand { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--verde); font-weight: 600; text-decoration: none; line-height: 1.3; }
 #drheitor .nav-brand span { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+#drheitor .nav-brand .crm-badge { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; color: var(--verde); background: var(--verde-light); padding: 2px 8px; border-radius: 50px; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.04em; }
+#drheitor .nav-right { display: flex; align-items: center; gap: 1rem; }
 #drheitor .nav-links { display: flex; gap: 2rem; list-style: none; }
 #drheitor .nav-links a { font-size: 14px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
 #drheitor .nav-links a:hover { color: var(--verde); }
 #drheitor .nav-cta { background: var(--verde); color: var(--white) !important; padding: 9px 20px; border-radius: 50px; font-weight: 500 !important; font-size: 13px !important; }
 #drheitor .nav-cta:hover { background: var(--verde-mid) !important; }
+
+/* LANGUAGE TOGGLE */
+#drheitor .lang-toggle {
+  display: flex; align-items: center;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 50px; padding: 3px; gap: 2px; flex-shrink: 0;
+}
+#drheitor .lang-btn {
+  padding: 5px 12px; border-radius: 50px; border: none; background: transparent;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+  color: var(--text-muted); cursor: pointer; transition: all 0.2s; letter-spacing: 0.03em;
+}
+#drheitor .lang-btn.active {
+  background: var(--verde); color: var(--white);
+}
+#drheitor .lang-btn:not(.active):hover { color: var(--verde); }
 
 /* SECTIONS */
 #drheitor section { display: none; }
@@ -95,9 +118,9 @@
 
 /* ABOUT */
 #drheitor .about-profile { display: flex; gap: 2.5rem; align-items: flex-start; margin-bottom: 3rem; flex-wrap: wrap; }
-#drheitor .about-pic {width: 35%;top: 20px; position: relative;left: -59px;}
-#drheitor .about-img1 {width:300px; height:auto;}
-#drheitor .about-text {width: 50%;}
+#drheitor .about-pic { width: 35%; position: relative; top: 20px; left: -59px; }
+#drheitor .about-img1 { width: 300px; height: auto; border-radius: var(--radius); }
+#drheitor .about-text { width: 50%; }
 #drheitor .about-text h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
 #drheitor .about-text .role-badge { display: inline-block; background: var(--verde-light); color: var(--verde); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 50px; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
 #drheitor .about-text p { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
@@ -139,271 +162,411 @@
 #drheitor footer strong { color: rgba(255,255,255,0.9); font-weight: 500; }
 #drheitor .footer-emergency { margin-top: 0.75rem; color: #f0a060; font-size: 13px; }
 
+/* i18n: hide/show by lang */
+#drheitor .lang-pt { display: revert; }
+#drheitor .lang-en { display: none; }
+#drheitor.en .lang-pt { display: none; }
+#drheitor.en .lang-en { display: revert; }
+/* inline elements */
+#drheitor span.lang-pt, #drheitor a.lang-pt { display: inline; }
+#drheitor span.lang-en, #drheitor a.lang-en { display: none; }
+#drheitor.en span.lang-pt, #drheitor.en a.lang-pt { display: none; }
+#drheitor.en span.lang-en, #drheitor.en a.lang-en { display: inline; }
+
 /* MOBILE */
 @media (max-width: 640px) {
   #drheitor .nav-links { display: none; }
   #drheitor .about-profile { flex-direction: column; align-items: center; }
+  #drheitor .about-pic { width: 100%; left: 0; top: 0; display: flex; justify-content: center; }
+  #drheitor .about-text { width: 100%; }
   #drheitor .stats-inner { gap: 1.5rem; }
   #drheitor .service-card { flex-direction: column; gap: 1rem; }
 }
 </style>
 
-</head><body><div id="drheitor">
+<div id="drheitor">
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-brand" href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;home&#39;); return false;">
+    <a class="nav-brand" href="#" onclick="drShowPage('home'); return false;">
       Dr. Heitor Campelo Duarte
-      <span>Médico de Urgência Online</span>
-      <span class="role-badge">CRM/PE 24.602</span>
+      <span class="lang-pt">Médico de Urgência Online</span>
+      <span class="lang-en">Online Emergency Physician</span>
+      <span class="crm-badge">CRM/PE 24.602</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;home&#39;); return false;">Início</a></li>
-      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;sobre&#39;); return false;">Sobre</a></li>
-      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;servicos&#39;); return false;">Serviços</a></li>
-      <li><a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" onclick="drShowPage(&#39;contato&#39;); return false;" class="nav-cta">Agendar Consulta</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#" onclick="drShowPage('home'); return false;"><span class="lang-pt">Início</span><span class="lang-en">Home</span></a></li>
+        <li><a href="#" onclick="drShowPage('sobre'); return false;"><span class="lang-pt">Sobre</span><span class="lang-en">About</span></a></li>
+        <li><a href="#" onclick="drShowPage('servicos'); return false;"><span class="lang-pt">Serviços</span><span class="lang-en">Services</span></a></li>
+        <li><a href="#" onclick="drShowPage('contato'); return false;" class="nav-cta"><span class="lang-pt">Agendar Consulta</span><span class="lang-en">Book Appointment</span></a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-pt" onclick="drSetLang('pt')">PT</button>
+        <button class="lang-btn" id="btn-en" onclick="drSetLang('en')">EN</button>
+      </div>
+    </div>
   </nav>
 
   <!-- ══ HOME ══ -->
-  <section id="drh-home" class="">
+  <section id="drh-home" class="active">
 
     <div class="hero">
       <div class="hero-inner">
-        <div class="hero-badge">✦ Telemedicina · Disponível 24h</div>
-        <h1>Atendimento Médico de Urgência Online — Rápido, Seguro e Humanizado</h1>
-        <p>Consultas por videochamada com o Dr. Heitor Campelo Duarte. Sem filas, sem deslocamento, disponível a qualquer hora do dia ou da noite.</p>
+        <div class="hero-badge">
+          <span class="lang-pt">✦ Telemedicina · Disponível 24h</span>
+          <span class="lang-en">✦ Telemedicine · Available 24h</span>
+        </div>
+        <h1>
+          <span class="lang-pt">Atendimento Médico de Urgência Online — Rápido, Seguro e Humanizado</span>
+          <span class="lang-en">Online Emergency Medical Care — Fast, Safe and Compassionate</span>
+        </h1>
+        <p>
+          <span class="lang-pt">Consultas por videochamada com o Dr. Heitor Campelo Duarte. Sem filas, sem deslocamento, disponível a qualquer hora do dia ou da noite.</span>
+          <span class="lang-en">Video consultations with Dr. Heitor Campelo Duarte. No waiting rooms, no commute — available any time of day or night.</span>
+        </p>
         <div class="hero-btns">
-          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" class="btn-primary" onclick="drShowPage(&#39;contato&#39;); return false;">Agendar Consulta Agora</a>
-          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" class="btn-outline-white" onclick="drShowPage(&#39;servicos&#39;); return false;">Ver Serviços</a>
+          <a href="#" class="btn-primary" onclick="drShowPage('contato'); return false;">
+            <span class="lang-pt">Agendar Consulta Agora</span>
+            <span class="lang-en">Book an Appointment Now</span>
+          </a>
+          <a href="#" class="btn-outline-white" onclick="drShowPage('servicos'); return false;">
+            <span class="lang-pt">Ver Serviços</span>
+            <span class="lang-en">View Services</span>
+          </a>
         </div>
       </div>
     </div>
 
     <div class="stats-bar">
       <div class="stats-inner">
-        <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Disponibilidade</span></div>
-        <div class="stat"><span class="stat-num">Online</span><span class="stat-label">100% por videochamada</span></div>
-        <div class="stat"><span class="stat-num">Legal</span><span class="stat-label">Conforme CFM nº 2.314/2022</span></div>
-        <div class="stat"><span class="stat-num">Digital</span><span class="stat-label">Receitas e atestados válidos</span></div>
+        <div class="stat">
+          <span class="stat-num">24h</span>
+          <span class="stat-label lang-pt">Disponibilidade</span>
+          <span class="stat-label lang-en">Availability</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Online</span>
+          <span class="stat-label lang-pt">100% por videochamada</span>
+          <span class="stat-label lang-en">100% video consultation</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Legal</span>
+          <span class="stat-label lang-pt">Conforme CFM nº 2.314/2022</span>
+          <span class="stat-label lang-en">CFM Resolution 2.314/2022</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Digital</span>
+          <span class="stat-label lang-pt">Receitas e atestados válidos</span>
+          <span class="stat-label lang-en">Valid prescriptions & certificates</span>
+        </div>
       </div>
     </div>
 
     <div class="content-wrap">
       <div class="green-line"></div>
-      <h2 class="section-title">Por que escolher o Dr. Heitor?</h2>
-      <p class="section-subtitle">Cuidado médico de excelência, onde quer que você esteja.</p>
+      <h2 class="section-title">
+        <span class="lang-pt">Por que escolher o Dr. Heitor?</span>
+        <span class="lang-en">Why choose Dr. Heitor?</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-pt">Cuidado médico de excelência, onde quer que você esteja.</span>
+        <span class="lang-en">Exceptional medical care, wherever you are.</span>
+      </p>
 
       <div class="cards-grid">
         <div class="card">
           <span class="card-icon">🩺</span>
-          <h3>Atendimento Humanizado</h3>
-          <p>Consultas personalizadas com escuta ativa, respeito e cuidado. Você não é um número — você é um paciente.</p>
+          <h3><span class="lang-pt">Atendimento Humanizado</span><span class="lang-en">Compassionate Care</span></h3>
+          <p>
+            <span class="lang-pt">Consultas personalizadas com escuta ativa, respeito e cuidado. Você não é um número — você é um paciente.</span>
+            <span class="lang-en">Personalized consultations with active listening, respect and care. You are not a number — you are a patient.</span>
+          </p>
         </div>
         <div class="card">
           <span class="card-icon">⏱</span>
-          <h3>Disponível 24h</h3>
-          <p>Urgências não têm hora marcada. Atendimento a qualquer momento, incluindo finais de semana e feriados.</p>
+          <h3><span class="lang-pt">Disponível 24h</span><span class="lang-en">Available 24/7</span></h3>
+          <p>
+            <span class="lang-pt">Urgências não têm hora marcada. Atendimento a qualquer momento, incluindo finais de semana e feriados.</span>
+            <span class="lang-en">Emergencies don't follow a schedule. Available at any time, including weekends and holidays.</span>
+          </p>
         </div>
         <div class="card">
           <span class="card-icon">📱</span>
-          <h3>Totalmente Online</h3>
-          <p>Por videochamada no seu celular, tablet ou computador. Sem sair de casa, sem exposição a ambientes hospitalares.</p>
+          <h3><span class="lang-pt">Totalmente Online</span><span class="lang-en">Fully Online</span></h3>
+          <p>
+            <span class="lang-pt">Por videochamada no seu celular, tablet ou computador. Sem sair de casa, sem exposição a ambientes hospitalares.</span>
+            <span class="lang-en">Via video call on your phone, tablet or computer. No need to leave home or visit a hospital.</span>
+          </p>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div class="green-line"></div>
-      <h2 class="section-title">O que posso atender?</h2>
-      <p class="section-subtitle">Principais queixas e sintomas tratados nas consultas online.</p>
+      <h2 class="section-title">
+        <span class="lang-pt">O que posso atender?</span>
+        <span class="lang-en">What can I treat?</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-pt">Principais queixas e sintomas tratados nas consultas online.</span>
+        <span class="lang-en">Main complaints and symptoms treated in online consultations.</span>
+      </p>
 
       <div class="symptoms-box">
-        <h3>Condições atendidas por telemedicina</h3>
+        <h3>
+          <span class="lang-pt">Condições atendidas por telemedicina</span>
+          <span class="lang-en">Conditions treated via telemedicine</span>
+        </h3>
         <div class="symptoms-grid">
-          <span class="symptom-item">Febre, gripe e resfriado</span>
-          <span class="symptom-item">Dores de cabeça e enxaqueca</span>
-          <span class="symptom-item">Dor de garganta e infecções respiratórias</span>
-          <span class="symptom-item">Alergias e reações leves</span>
-          <span class="symptom-item">Dores musculares e articulares</span>
-          <span class="symptom-item">Náusea, vômito e diarreia</span>
-          <span class="symptom-item">Infecções urinárias</span>
-          <span class="symptom-item">Receitas e renovação de prescrição</span>
-          <span class="symptom-item">Orientação e triagem de sintomas</span>
-          <span class="symptom-item">Dúvidas sobre medicamentos</span>
+          <span class="symptom-item"><span class="lang-pt">Febre, gripe e resfriado</span><span class="lang-en">Fever, flu and cold</span></span>
+          <span class="symptom-item"><span class="lang-pt">Dores de cabeça e enxaqueca</span><span class="lang-en">Headache and migraine</span></span>
+          <span class="symptom-item"><span class="lang-pt">Dor de garganta e infecções respiratórias</span><span class="lang-en">Sore throat and respiratory infections</span></span>
+          <span class="symptom-item"><span class="lang-pt">Alergias e reações leves</span><span class="lang-en">Allergies and mild reactions</span></span>
+          <span class="symptom-item"><span class="lang-pt">Dores musculares e articulares</span><span class="lang-en">Muscle and joint pain</span></span>
+          <span class="symptom-item"><span class="lang-pt">Náusea, vômito e diarreia</span><span class="lang-en">Nausea, vomiting and diarrhea</span></span>
+          <span class="symptom-item"><span class="lang-pt">Infecções urinárias</span><span class="lang-en">Urinary tract infections</span></span>
+          <span class="symptom-item"><span class="lang-pt">Receitas e renovação de prescrição</span><span class="lang-en">Prescriptions and prescription renewals</span></span>
+          <span class="symptom-item"><span class="lang-pt">Orientação e triagem de sintomas</span><span class="lang-en">Symptom triage and guidance</span></span>
+          <span class="symptom-item"><span class="lang-pt">Dúvidas sobre medicamentos</span><span class="lang-en">Medication questions</span></span>
         </div>
       </div>
 
       <div class="alert-box">
-        ⚠️ <strong>Atenção:</strong> Emergências graves como infarto, AVC e trauma severo exigem atendimento presencial imediato. Ligue para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.
+        <span class="lang-pt">⚠️ <strong>Atenção:</strong> Emergências graves como infarto, AVC e trauma severo exigem atendimento presencial imediato. Ligue para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.</span>
+        <span class="lang-en">⚠️ <strong>Warning:</strong> Serious emergencies such as heart attacks, strokes and severe trauma require immediate in-person care. Call <strong>SAMU: 192</strong> or go to the nearest emergency room.</span>
       </div>
     </div>
   </section>
 
-  <!-- ══ SOBRE ══ -->
-  <section id="drh-sobre" class="active">
+  <!-- ══ SOBRE / ABOUT ══ -->
+  <section id="drh-sobre">
 
     <div class="page-hero">
       <div class="page-hero-inner">
-        <h1>Conheça o Dr. Heitor Campelo Duarte</h1>
-        <p>Médico com experiência em urgência e emergência, agora também disponível online.</p>
+        <h1>
+          <span class="lang-pt">Conheça o Dr. Heitor Campelo Duarte</span>
+          <span class="lang-en">Meet Dr. Heitor Campelo Duarte</span>
+        </h1>
+        <p>
+          <span class="lang-pt">Médico com experiência em urgência e emergência, agora também disponível online.</span>
+          <span class="lang-en">Physician with experience in urgent and emergency care, now also available online.</span>
+        </p>
       </div>
     </div>
 
     <div class="content-wrap">
-
       <div class="about-profile">
 
-        <!-- ÁREA DE FOTO DO MÉDICO -->
+        <!-- FOTO DO MÉDICO -->
         <div class="about-pic">
-          <img class="about-img1" src="images\2.png"> </img>   
-        </div>  
+          <img class="about-img1" src="images/2.png" alt="Dr. Heitor Campelo Duarte">
+        </div>
+
         <div class="about-text">
           <h2>Dr. Heitor Campelo Duarte</h2>
-          <span class="role-badge">Médico de Urgência Online</span>
-          <p>O Dr. Heitor Campelo Duarte é médico formado com sólida experiência em urgência e emergência. Ao longo de sua trajetória, atuou em prontos-socorros e unidades de pronto atendimento (UPAs), desenvolvendo uma visão clínica apurada para diagnóstico ágil e tratamento eficaz.</p>
-          <p>Acreditando que o acesso à saúde de qualidade deve ser simples e rápido, o Dr. Heitor expandiu sua atuação para o atendimento médico online, levando cuidado médico de excelência diretamente até você — onde quer que você esteja.</p>
-          <p>Seu compromisso é com a saúde e o bem-estar de cada paciente, oferecendo um atendimento técnico, empático e acessível.</p>
+          <span class="role-badge lang-pt">Médico de Urgência Online</span>
+          <span class="role-badge lang-en">Online Emergency Physician</span>
+          <p>
+            <span class="lang-pt">O Dr. Heitor Campelo Duarte é médico formado com sólida experiência em urgência e emergência. Ao longo de sua trajetória, atuou em prontos-socorros e unidades de pronto atendimento (UPAs), desenvolvendo uma visão clínica apurada para diagnóstico ágil e tratamento eficaz.</span>
+            <span class="lang-en">Dr. Heitor Campelo Duarte is a licensed physician with strong experience in urgent and emergency care. Throughout his career, he has worked in emergency departments and urgent care units (UPAs), developing sharp clinical judgment for fast diagnosis and effective treatment.</span>
+          </p>
+          <p>
+            <span class="lang-pt">Acreditando que o acesso à saúde de qualidade deve ser simples e rápido, o Dr. Heitor expandiu sua atuação para o atendimento médico online, levando cuidado médico de excelência diretamente até você — onde quer que você esteja.</span>
+            <span class="lang-en">Believing that access to quality healthcare should be simple and fast, Dr. Heitor expanded his practice to online medical consultations, delivering excellent medical care directly to you — wherever you are.</span>
+          </p>
+          <p>
+            <span class="lang-pt">Seu compromisso é com a saúde e o bem-estar de cada paciente, oferecendo um atendimento técnico, empático e acessível.</span>
+            <span class="lang-en">His commitment is to the health and well-being of each patient, offering technically sound, empathetic and accessible care.</span>
+          </p>
         </div>
       </div>
 
       <div class="credentials">
-        <h3>Formação e Credenciais</h3>
-        <div class="cred-item"><span class="cred-dot"></span>Graduação em Medicina</div>
-        <div class="cred-item"><span class="cred-dot"></span>Experiência em urgência e emergência hospitalar</div>
-        <div class="cred-item"><span class="cred-dot"></span>Atuação em UPAs e prontos-socorros</div>
-        <div class="cred-item"><span class="cred-dot"></span>Telemedicina conforme Resolução CFM nº 2.314/2022</div>
-        <div class="cred-item"><span class="cred-dot"></span>CRM ativo — [inserir número do CRM]</div>
+        <h3>
+          <span class="lang-pt">Formação e Credenciais</span>
+          <span class="lang-en">Education and Credentials</span>
+        </h3>
+        <div class="cred-item"><span class="cred-dot"></span><span class="lang-pt">Graduação em Medicina</span><span class="lang-en">Medical Degree</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="lang-pt">Experiência em urgência e emergência hospitalar</span><span class="lang-en">Experience in hospital urgent and emergency care</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="lang-pt">Atuação em UPAs e prontos-socorros</span><span class="lang-en">Practice in UPAs and emergency departments</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="lang-pt">Telemedicina conforme Resolução CFM nº 2.314/2022</span><span class="lang-en">Telemedicine compliant with CFM Resolution 2.314/2022</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="lang-pt">CRM/PE 24.602</span><span class="lang-en">Medical License: CRM/PE 24.602</span></div>
       </div>
 
       <div class="alert-box">
-        💡 Tem dúvidas sobre se seu caso pode ser atendido online? Entre em contato e o Dr. Heitor orienta o melhor caminho para o seu cuidado.
+        <span class="lang-pt">💡 Tem dúvidas sobre se seu caso pode ser atendido online? Entre em contato e o Dr. Heitor orienta o melhor caminho para o seu cuidado.</span>
+        <span class="lang-en">💡 Not sure if your case can be handled online? Get in touch and Dr. Heitor will guide you to the best care option for your situation.</span>
       </div>
     </div>
   </section>
 
-  <!-- ══ SERVIÇOS ══ -->
-  <section id="drh-servicos" class="">
+  <!-- ══ SERVIÇOS / SERVICES ══ -->
+  <section id="drh-servicos">
 
     <div class="page-hero">
       <div class="page-hero-inner">
-        <h1>Serviços de Atendimento Médico Online</h1>
-        <p>Consultas completas por videochamada, com documentos médicos digitais de validade legal.</p>
+        <h1>
+          <span class="lang-pt">Serviços de Atendimento Médico Online</span>
+          <span class="lang-en">Online Medical Services</span>
+        </h1>
+        <p>
+          <span class="lang-pt">Consultas completas por videochamada, com documentos médicos digitais de validade legal.</span>
+          <span class="lang-en">Full consultations via video call, with legally valid digital medical documents.</span>
+        </p>
       </div>
     </div>
 
     <div class="content-wrap">
       <div class="green-line"></div>
-      <h2 class="section-title">O que oferecemos</h2>
-      <p class="section-subtitle">Atendimento médico de urgência do dia a dia, sem sair de casa.</p>
+      <h2 class="section-title">
+        <span class="lang-pt">O que oferecemos</span>
+        <span class="lang-en">What we offer</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-pt">Atendimento médico de urgência do dia a dia, sem sair de casa.</span>
+        <span class="lang-en">Everyday urgent medical care, without leaving your home.</span>
+      </p>
 
       <div class="service-card">
         <div class="service-icon">🩺</div>
         <div class="service-info">
-          <h3>Consulta de Urgência Online</h3>
-          <p>Atendimento imediato para sintomas agudos: febre, dor intensa, mal-estar, infecções e outros. O médico avalia, orienta e prescreve quando necessário.</p>
-          <span class="service-tag">Duração: 20 a 40 minutos</span>
+          <h3><span class="lang-pt">Consulta de Urgência Online</span><span class="lang-en">Online Urgent Care Consultation</span></h3>
+          <p><span class="lang-pt">Atendimento imediato para sintomas agudos: febre, dor intensa, mal-estar, infecções e outros. O médico avalia, orienta e prescreve quando necessário.</span><span class="lang-en">Immediate attention for acute symptoms: fever, severe pain, general malaise, infections and more. The doctor evaluates, advises and prescribes when needed.</span></p>
+          <span class="service-tag lang-pt">Duração: 20 a 40 minutos</span>
+          <span class="service-tag lang-en">Duration: 20 to 40 minutes</span>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">📋</div>
         <div class="service-info">
-          <h3>Emissão de Atestado Médico</h3>
-          <p>Atestados médicos digitais com validade legal, emitidos após avaliação clínica. Aceitos para justificativa de ausência no trabalho ou escola.</p>
-          <span class="service-tag">Com assinatura digital válida</span>
+          <h3><span class="lang-pt">Emissão de Atestado Médico</span><span class="lang-en">Medical Certificate Issuance</span></h3>
+          <p><span class="lang-pt">Atestados médicos digitais com validade legal, emitidos após avaliação clínica. Aceitos para justificativa de ausência no trabalho ou escola.</span><span class="lang-en">Legally valid digital medical certificates, issued after clinical evaluation. Accepted for work or school absence justification.</span></p>
+          <span class="service-tag lang-pt">Com assinatura digital válida</span>
+          <span class="service-tag lang-en">With valid digital signature</span>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">💊</div>
         <div class="service-info">
-          <h3>Receita Médica Digital</h3>
-          <p>Prescrição de medicamentos conforme avaliação clínica. Receitas digitais com assinatura eletrônica, aceitas em farmácias de todo o Brasil.</p>
-          <span class="service-tag">Válida em todo território nacional</span>
+          <h3><span class="lang-pt">Receita Médica Digital</span><span class="lang-en">Digital Prescription</span></h3>
+          <p><span class="lang-pt">Prescrição de medicamentos conforme avaliação clínica. Receitas digitais com assinatura eletrônica, aceitas em farmácias de todo o Brasil.</span><span class="lang-en">Medication prescription based on clinical evaluation. Digital prescriptions with electronic signature, accepted at pharmacies throughout Brazil.</span></p>
+          <span class="service-tag lang-pt">Válida em todo território nacional</span>
+          <span class="service-tag lang-en">Valid nationwide in Brazil</span>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🔍</div>
         <div class="service-info">
-          <h3>Triagem e Orientação de Sintomas</h3>
-          <p>Não sabe se precisa ir ao pronto-socorro? O Dr. Heitor avalia seus sintomas e orienta o melhor caminho: tratamento domiciliar, medicação ou encaminhamento presencial.</p>
-          <span class="service-tag">Decisão informada e segura</span>
+          <h3><span class="lang-pt">Triagem e Orientação de Sintomas</span><span class="lang-en">Symptom Triage and Guidance</span></h3>
+          <p><span class="lang-pt">Não sabe se precisa ir ao pronto-socorro? O Dr. Heitor avalia seus sintomas e orienta o melhor caminho: tratamento domiciliar, medicação ou encaminhamento presencial.</span><span class="lang-en">Not sure if you need to go to the ER? Dr. Heitor assesses your symptoms and recommends the best course: home treatment, medication, or in-person referral.</span></p>
+          <span class="service-tag lang-pt">Decisão informada e segura</span>
+          <span class="service-tag lang-en">Informed and safe decision-making</span>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-icon">📝</div>
         <div class="service-info">
-          <h3>Solicitação de Exames</h3>
-          <p>Pedidos de exames laboratoriais e de imagem quando clinicamente indicados, com orientação sobre os resultados em consulta de retorno.</p>
-          <span class="service-tag">Laudos e pedidos digitais</span>
+          <h3><span class="lang-pt">Solicitação de Exames</span><span class="lang-en">Lab & Imaging Orders</span></h3>
+          <p><span class="lang-pt">Pedidos de exames laboratoriais e de imagem quando clinicamente indicados, com orientação sobre os resultados em consulta de retorno.</span><span class="lang-en">Lab and imaging test orders when clinically indicated, with guidance on results during a follow-up consultation.</span></p>
+          <span class="service-tag lang-pt">Laudos e pedidos digitais</span>
+          <span class="service-tag lang-en">Digital orders and reports</span>
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div class="alert-box">
-        ⚠️ Os serviços de telemedicina são prestados em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong>.
+        <span class="lang-pt">⚠️ Os serviços de telemedicina são prestados em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong>.</span>
+        <span class="lang-en">⚠️ Telemedicine services comply with <strong>CFM Resolution 2.314/2022</strong>. Online care does not replace in-person visits for serious emergencies. In life-threatening situations, call <strong>SAMU: 192</strong> immediately.</span>
       </div>
     </div>
   </section>
 
-  <!-- ══ CONTATO ══ -->
+  <!-- ══ CONTATO / CONTACT ══ -->
   <section id="drh-contato">
 
     <div class="page-hero">
       <div class="page-hero-inner">
-        <h1>Agende sua Consulta de Urgência</h1>
-        <p>Disponível 24 horas por dia, 7 dias por semana — incluindo feriados.</p>
+        <h1>
+          <span class="lang-pt">Agende sua Consulta de Urgência</span>
+          <span class="lang-en">Book Your Urgent Care Appointment</span>
+        </h1>
+        <p>
+          <span class="lang-pt">Disponível 24 horas por dia, 7 dias por semana — incluindo feriados.</span>
+          <span class="lang-en">Available 24 hours a day, 7 days a week — including holidays.</span>
+        </p>
       </div>
     </div>
 
     <div class="content-wrap">
       <div class="green-line"></div>
-      <h2 class="section-title">Fale conosco</h2>
-      <p class="section-subtitle">Escolha o canal de sua preferência para agendar ou tirar dúvidas.</p>
+      <h2 class="section-title">
+        <span class="lang-pt">Fale conosco</span>
+        <span class="lang-en">Get in touch</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="lang-pt">Escolha o canal de sua preferência para agendar ou tirar dúvidas.</span>
+        <span class="lang-en">Choose your preferred channel to book or ask questions.</span>
+      </p>
 
       <div class="contact-grid">
         <div class="contact-card">
           <span class="icon">📲</span>
           <h3>WhatsApp</h3>
-          <p>Mais rápido para urgências</p>
+          <p><span class="lang-pt">Mais rápido para urgências</span><span class="lang-en">Fastest for urgent matters</span></p>
           <a href="https://wa.me/SEUNUMERO" target="_blank">[inserir número]</a>
         </div>
         <div class="contact-card">
           <span class="icon">📧</span>
           <h3>E-mail</h3>
-          <p>Para dúvidas e agendamentos</p>
+          <p><span class="lang-pt">Para dúvidas e agendamentos</span><span class="lang-en">For questions and bookings</span></p>
           <a href="mailto:[inserir email]">[inserir e-mail]</a>
         </div>
         <div class="contact-card">
           <span class="icon">🖥</span>
-          <h3>Agendamento Online</h3>
-          <p>Plataforma de telemedicina</p>
-          <a href="file:///C:/Users/heito/Downloads/dr-heitor-site_1.html#" target="_blank">[inserir link]</a>
+          <h3><span class="lang-pt">Agendamento Online</span><span class="lang-en">Online Booking</span></h3>
+          <p><span class="lang-pt">Plataforma de telemedicina</span><span class="lang-en">Telemedicine platform</span></p>
+          <a href="#" target="_blank">[inserir link]</a>
         </div>
       </div>
 
       <div class="cta-banner">
-        <h2>Precisa de atendimento agora?</h2>
-        <p>Não espere. Entre em contato e receba orientação médica de qualidade em minutos, direto no seu celular ou computador.</p>
-        <a href="https://wa.me/SEUNUMERO" class="btn-primary" target="_blank">Chamar no WhatsApp</a>
+        <h2>
+          <span class="lang-pt">Precisa de atendimento agora?</span>
+          <span class="lang-en">Need care right now?</span>
+        </h2>
+        <p>
+          <span class="lang-pt">Não espere. Entre em contato e receba orientação médica de qualidade em minutos, direto no seu celular ou computador.</span>
+          <span class="lang-en">Don't wait. Get in touch and receive quality medical guidance in minutes, directly on your phone or computer.</span>
+        </p>
+        <a href="https://wa.me/SEUNUMERO" class="btn-primary" target="_blank">
+          <span class="lang-pt">Chamar no WhatsApp</span>
+          <span class="lang-en">Message on WhatsApp</span>
+        </a>
       </div>
 
       <div class="legal-box">
-        Este serviço de telemedicina é prestado em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.
+        <span class="lang-pt">Este serviço de telemedicina é prestado em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.</span>
+        <span class="lang-en">This telemedicine service complies with <strong>CFM Resolution 2.314/2022</strong>. Online care does not replace in-person visits for serious emergencies. In life-threatening situations, call <strong>SAMU: 192</strong> immediately or go to the nearest emergency room.</span>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <strong>Dr. Heitor Campelo Duarte</strong> — CRM [inserir número]<br>
-    Médico de Urgência Online · Telemedicina conforme Resolução CFM nº 2.314/2022<br>
-    © 2025 — Todos os direitos reservados
-    <div class="footer-emergency">⚠️ Emergências: SAMU 192 · Bombeiros 193 · Polícia 190</div>
+    <strong>Dr. Heitor Campelo Duarte</strong> — CRM/PE 24.602<br>
+    <span class="lang-pt">Médico de Urgência Online · Telemedicina conforme Resolução CFM nº 2.314/2022</span>
+    <span class="lang-en">Online Emergency Physician · Telemedicine compliant with CFM Resolution 2.314/2022</span><br>
+    © 2025 — <span class="lang-pt">Todos os direitos reservados</span><span class="lang-en">All rights reserved</span>
+    <div class="footer-emergency">
+      <span class="lang-pt">⚠️ Emergências: SAMU 192 · Bombeiros 193 · Polícia 190</span>
+      <span class="lang-en">⚠️ Emergencies: SAMU 192 · Fire Dept. 193 · Police 190</span>
+    </div>
   </footer>
 
 </div>
@@ -411,6 +574,7 @@
 <script>
 (function() {
   var pages = ['home','sobre','servicos','contato'];
+
   window.drShowPage = function(id) {
     pages.forEach(function(p) {
       var el = document.getElementById('drh-' + p);
@@ -423,6 +587,20 @@
       if (wrap) wrap.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  window.drSetLang = function(lang) {
+    var wrap = document.getElementById('drheitor');
+    var btnPt = document.getElementById('btn-pt');
+    var btnEn = document.getElementById('btn-en');
+    if (lang === 'en') {
+      wrap.classList.add('en');
+      btnEn.classList.add('active');
+      btnPt.classList.remove('active');
+    } else {
+      wrap.classList.remove('en');
+      btnPt.classList.add('active');
+      btnEn.classList.remove('active');
+    }
+  };
 })();
 </script>
-</body></html>
