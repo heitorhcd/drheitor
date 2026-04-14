@@ -71,10 +71,11 @@
 #drheitor section.active { display: block; }
 
 /* HERO */
-#drheitor .hero { background: var(--verde); color: var(--white); padding: 7rem 2rem 5rem; position: relative; overflow: hidden; }
+#drheitor .hero { display:flex; background: var(--verde); color: var(--white); padding: 7rem 2rem 5rem; position: relative; overflow: hidden; }
 #drheitor .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: rgba(255,255,255,0.04); }
 #drheitor .hero::after { content: ''; position: absolute; bottom: -60px; left: 60px; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.03); }
 #drheitor .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+#drheitor .hero-pic {width: 27%; position: relative; top: 20px; left: -120px}
 #drheitor .hero-badge { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 1.75rem; }
 #drheitor .hero h1 { font-size: clamp(2rem,5vw,3.2rem); font-weight: 500; color: var(--white); margin-bottom: 1.25rem; max-width: 640px; }
 #drheitor .hero p { font-size: 17px; color: rgba(255,255,255,0.82); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; }
@@ -214,27 +215,34 @@
 
     <div class="hero">
       <div class="hero-inner">
-        <div class="hero-badge">
-          <span class="lang-pt">✦ Telemedicina · Disponível 24h</span>
-          <span class="lang-en">✦ Telemedicine · Available 24h</span>
+        <!-- LEFT COLUMN-->
+        <div>
+             <div class="hero-badge">
+               <span class="lang-pt">✦ Telemedicina · Disponível 24h</span>
+               <span class="lang-en">✦ Telemedicine · Available 24h</span>
+             </div>
+             <h1>
+               <span class="lang-pt">Atendimento Médico de Urgência Online — Rápido, Seguro e Humanizado</span>
+               <span class="lang-en">Online Emergency Medical Care — Fast, Safe and Compassionate</span>
+             </h1>
+             <p>
+               <span class="lang-pt">Consultas por videochamada com o Dr. Heitor Campelo Duarte. Sem filas, sem deslocamento, disponível a qualquer hora do dia ou da noite.</span>
+               <span class="lang-en">Video consultations with Dr. Heitor Campelo Duarte. No waiting rooms, no commute — available any time of day or night.</span>
+             </p>
+             <div class="hero-btns">
+               <a href="#" class="btn-primary" onclick="drShowPage('contato'); return false;">
+                 <span class="lang-pt">Agendar Consulta Agora</span>
+                 <span class="lang-en">Book an Appointment Now</span>
+               </a>
+               <a href="#" class="btn-outline-white" onclick="drShowPage('servicos'); return false;">
+                 <span class="lang-pt">Ver Serviços</span>
+                 <span class="lang-en">View Services</span>
+               </a>
+             </div>
         </div>
-        <h1>
-          <span class="lang-pt">Atendimento Médico de Urgência Online — Rápido, Seguro e Humanizado</span>
-          <span class="lang-en">Online Emergency Medical Care — Fast, Safe and Compassionate</span>
-        </h1>
-        <p>
-          <span class="lang-pt">Consultas por videochamada com o Dr. Heitor Campelo Duarte. Sem filas, sem deslocamento, disponível a qualquer hora do dia ou da noite.</span>
-          <span class="lang-en">Video consultations with Dr. Heitor Campelo Duarte. No waiting rooms, no commute — available any time of day or night.</span>
-        </p>
-        <div class="hero-btns">
-          <a href="#" class="btn-primary" onclick="drShowPage('contato'); return false;">
-            <span class="lang-pt">Agendar Consulta Agora</span>
-            <span class="lang-en">Book an Appointment Now</span>
-          </a>
-          <a href="#" class="btn-outline-white" onclick="drShowPage('servicos'); return false;">
-            <span class="lang-pt">Ver Serviços</span>
-            <span class="lang-en">View Services</span>
-          </a>
+        <!-- RIGHT COLUMN-->
+        <div class="hero-pic">
+          <img class="about-img1" src="images/2.png" alt="Dr. Heitor Campelo Duarte">
         </div>
       </div>
     </div>
