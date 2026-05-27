@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact Confirmation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #0a5c3f;
+      --verde-mid: #0f7a52;
+      --verde-light: #e6f4ee;
+      --ouro: #c8963e;
+      --text-dark: #1a1a1a;
+      --text-muted: #666;
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --border: #e0e0d8;
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .confirmation-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      max-width: 620px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: var(--verde-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      color: var(--verde);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--verde-mid);
+      transform: translateY(-1px);
+    }
+
+    .small-text {
+      margin-top: 1.8rem;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="confirmation-box">
+
+    <div class="icon">
+      ✅
+    </div>
+
+    <h1>You will be contacted soon via Whatsapp</h1>
+
+    <p>
+      Thank you for your request.  
+      Dr. Heitor Campelo Duarte or his team will contact you shortly with instructions for your consultation.
+    </p>
+
+    <a href="index.html" class="btn">
+      Return to Website
+    </a>
+
+    <div class="small-text">
+      Online Emergency Medical Care
+    </div>
+
+  </div>
+
+</body>
+</html>
