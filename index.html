@@ -155,6 +155,14 @@
 #drheitor .cta-banner h2 { font-size: 1.8rem; margin-bottom: 0.75rem; color: var(--white); }
 #drheitor .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 1.75rem; font-weight: 300; }
 #drheitor .legal-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+#drheitor .form-box {background: var(--white);border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-top: 2rem;}
+#drheitor.form-grid { display: grid; gap: 1.5rem;}
+#drheitor .form-group label { display: block; margin-bottom: 0.5rem; font-size: 14px; font-weight: 500; color: var(--text-dark);}
+#drheitor.form-group select { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif;  font-size: 15px; background: var(--white); color: var(--text-dark);transition: border-color 0.2s;}
+#drheitor.form-group select:focus { outline: none;  border-color: var(--verde-mid);}
+#drheitor.form-submit {  margin-top: 1rem;}
+#drheitor.form-submit button {  width: 100%;  background: var(--verde);  color: var(--white);  border: none;  border-radius: 50px;  padding: 15px;  font-size: 15px;  font-weight: 500;  font-family: 'DM Sans', sans-serif;cursor: pointer;  transition: 0.2s ease;}
+#drheitor.form-submit button:hover {  background: var(--verde-mid);  transform: translateY(-1px);}
 
 /* PAGE HERO */
 #drheitor .page-hero { background: linear-gradient(135deg, #0a5c3f 0%, #073d29 100%); color: #fff; padding: 4rem 2rem 3rem; }
@@ -556,9 +564,12 @@
           <span class="lang-pt">Solicitar atendimento</span>
           <span class="lang-en">Request appointment</span>
         </a>
+           <div class="form-box">
+              <div class="form-grid">
+                <div class="form-group">
            <span class="lang-pt">
                 <form action="https://formsubmit.co/drloganduarte@gmail.com" method="POST">
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" placeholder="Nome completo" required>
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://heitorhcd.github.io/drheitor/confirmacao.html">
                     <button type="submit">Enviar</button>
@@ -566,13 +577,17 @@
            </span>
             <span class="lang-en">
                 <form action="https://formsubmit.co/drloganduarte@gmail.com" method="POST">
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" required placeholder="Full name">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://heitorhcd.github.io/drheitor/confirmation.html">
                     <button type="submit">Send</button>
                 </form>
            </span>
+           </div>
+              </div >
+                </div>
       </div>
+        
 
       <div class="legal-box">
         <span class="lang-pt">Este serviço de telemedicina é prestado em conformidade com a <strong>Resolução CFM nº 2.314/2022</strong>. O atendimento online não substitui consultas presenciais em casos de emergência grave. Em caso de risco de vida, ligue imediatamente para o <strong>SAMU: 192</strong> ou dirija-se ao pronto-socorro mais próximo.</span>
