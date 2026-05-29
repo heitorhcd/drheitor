@@ -170,15 +170,15 @@
         >
       </div>
 
-      <div class="form-group">
-        <label for="nascimento">Date of Birth</label>
+       <div class="form-group">
+        <label for="data">Date of Birth</label>
         <input 
           type="text" 
-          id="nascimento" 
-          name="nascimento"
-          placeholder="DD/MM/YYYY"
-          pattern="\d{2}/\d{2}/\d{4}"
-          required
+          id="data" 
+          name="data" 
+          maxlength="10" 
+          placeholder="DD/MM/AAAA"
+          inputmode="numeric"
         >
       </div>
 
@@ -226,4 +226,20 @@
   </div>
 
 </body>
+  <script>
+document.getElementById('data').addEventListener('input', function(e) {
+  let valor = e.target.value.replace(/\D/g, '');
+
+  if (valor.length > 2) {
+    valor = valor.slice(0,2) + '/' + valor.slice(2);
+  }
+
+  if (valor.length > 5) {
+    valor = valor.slice(0,5) + '/' + valor.slice(5,9);
+  }
+
+  e.target.value = valor;
+});
+
+</script>
 </html>
