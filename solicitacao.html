@@ -171,6 +171,19 @@
       </div>
 
       <div class="form-group">
+  <label for="data">Data de nascimento</label>
+  <input 
+    type="text" 
+    id="data" 
+    name="data" 
+    maxlength="10" 
+    placeholder="DD/MM/AAAA"
+    inputmode="numeric"
+  >
+</div>
+
+      <!--
+      <div class="form-group">
         <label for="nascimento">Data de Nascimento</label>
         <input 
           type="text" 
@@ -181,6 +194,7 @@
           required
         >
       </div>
+      -->
 
       <div class="form-group">
         <label for="cpf">CPF</label>
@@ -237,4 +251,20 @@
   </div>
 
 </body>
+
+  <script>
+document.getElementById('data').addEventListener('input', function(e) {
+  let valor = e.target.value.replace(/\D/g, '');
+
+  if (valor.length > 2) {
+    valor = valor.slice(0,2) + '/' + valor.slice(2);
+  }
+
+  if (valor.length > 5) {
+    valor = valor.slice(0,5) + '/' + valor.slice(5,9);
+  }
+
+  e.target.value = valor;
+});
+</script>
 </html>
