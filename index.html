@@ -186,9 +186,8 @@
 #drheitor .page-hero p { font-size: 16px; color: rgba(255,255,255,0.75); font-weight: 300; }
 
 /* WHATSAPP BUTTON*/
-#drheitorcaixa-whatsapp{width:350px;height:90px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:24px;font-weight:600;font-family:'Segoe UI', sans-serif;background:linear-gradient(135deg,#0a5c3f 0%,#0f7a52 100%);border:2px solid rgba(255,255,255,.15);border-radius:100px;box-shadow:0 10px 25px rgba(10,92,63,.25),0 4px 12px rgba(0,0,0,.08);color:#fff;}
-
-#drheitor.caixa-whatsapp:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(18,140,126,0.35),inset 0 1px 1px rgba(255,255,255,0.2);}
+#drheitor .caixa-whatsapp{width:fit-content;display:none;align-items:center;justify-content:center;color:#FFFFFF;font-size:24px;font-weight:600;font-family:'Segoe UI', sans-serif;background:linear-gradient(135deg,#0a5c3f 0%,#0f7a52 100%);border:2px solid rgba(255,255,255,.15);border-radius:100px;box-shadow:0 10px 25px rgba(10,92,63,.25),0 4px 12px rgba(0,0,0,.08);color:#fff;}
+#drheitor .caixa-whatsapp:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(18,140,126,0.35),inset 0 1px 1px rgba(255,255,255,0.2);}
 
 /* FOOTER */
 #drheitor footer { background: #1a1a1a; color: rgba(255,255,255,0.6); padding: 2rem; text-align: center; font-size: 13px; line-height: 1.8; }
@@ -208,22 +207,8 @@
 
 /* MOBILE */
 @media (max-width: 640px) {
-     /*
-  #drheitor .nav-links { display: none; }
-  #drheitor .about-profile { flex-direction: column; align-items: center; }
-  #drheitor .about-pic { width: 100%; left: 0; top: 0; display: flex; justify-content: center; }
-  #drheitor .about-text { width: 100%; }
-  #drheitor .stats-inner { gap: 1.5rem; }
-  #drheitor .service-card { flex-direction: column; gap: 1rem; } */
-     
-#drheitor { margin: 0 !important; overflow-x: hidden !important; }
-/*
-#drheitor nav{padding:8px 14px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap!important;gap:8px!important;}
-#drheitor .nav-right{width:auto!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;}
-#drheitor .nav-brand { max-width: 70% !important; font-size: 14px !important; }
-     */
-
-     
+    
+#drheitor { margin: 0 !important; overflow-x: hidden !important; }     
 #drheitor nav{padding:8px 12px!important;height:auto!important;display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:8px!important;overflow:hidden!important;}
 #drheitor .nav-right{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:4px!important;min-width:0!important;flex:1!important;}
 #drheitor .nav-links{display:ruby!important;gap:10px!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;width:100%!important;margin-top:-2px!important;}
@@ -233,20 +218,16 @@
 #drheitor .nav-links .nav-cta{display:inline-block!important;margin-top:2px!important;}     
 #drheitor .nav-links li{list-style:none!important;}
 #drheitor .nav-brand{max-width:44%!important;font-size:14px!important;line-height:1.15!important;overflow:hidden!important;}
-
 #drheitor .lang-toggle{padding:2px!important;gap:1px!important;flex-shrink:0!important;}
-#drheitor .lang-btn{padding:4px 7px!important;font-size:10px!important;}
-     
+#drheitor .lang-btn{padding:4px 7px!important;font-size:10px!important;}     
 #drheitor .hero { flex-direction: column !important; align-items: center !important; text-align: center !important; padding: 90px 20px 50px !important; margin-top: -68px !important; }
-
 #drheitor .hero { display:flex!important; flex-direction:column!important; }
 #drheitor .hero-inner { display:contents!important; }
 #drheitor .hero-badge { order:1; }
 #drheitor .hero h1 { order:2; }
 #drheitor .hero p { order:3; }
 #drheitor .hero-pic { order:4; width:100%!important; position:static!important; display:flex!important; justify-content:center!important; margin:24px 0 20px!important; }
-#drheitor .hero-btns { order:5; }
-     
+#drheitor .hero-btns { order:5; }     
 #drheitor .hero-inner { max-width: 100% !important; margin: 0 !important; }
 #drheitor .hero-pic { width: 100% !important; position: static !important; left: 0 !important; top: 0 !important; display: flex !important; justify-content: center !important; margin-bottom: 24px !important; }
 #drheitor .hero-img1 { width: 240px !important; max-width: 85% !important; height: auto !important; border-radius: 18px !important; }
@@ -269,6 +250,9 @@
 #drheitor .cta-banner { padding: 36px 20px !important; border-radius: 20px !important; }
 #drheitor .page-hero { padding: 70px 20px 50px !important; }
 #drheitor footer { padding: 32px 20px !important; } 
+
+#drheitor .caixa-whatsapp {display:inline-block;}
+#drheitor .btn-primary {display:non;}
 }
 </style>
 </head>
@@ -599,9 +583,15 @@
 
           <div>
                <a href="#" class="btn-primary" onclick="drShowPage('contato'); return false;" style="position: relative;align-self: ;*/;left: 33%;">
-                      <span class="lang-pt">Agendar Consulta Agora</span>
-                      <span class="lang-en">Book an Appointment Now</span>
-                    </a>
+                      <span class="lang-pt">Solicitar Consulta Agora</span>
+                      <span class="lang-en">Request an Appointment Now</span>
+               </a>
+
+               <div class=" caixa-whatsapp " style="position: relative;align-self: ;*/;left: 33%;">
+                   <i class="fa fa-whatsapp" style="font-size: 31px;color:white;padding: -3px;"></i>
+                    <span class="lang-pt">Solicitar Consulta Agora</span>
+                    <span class="lang-en">Request an Appointment Now</span>
+               </div>
           </div>
      
            <div class="divider"></div>
