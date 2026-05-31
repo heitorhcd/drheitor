@@ -158,8 +158,8 @@
 #drheitor .service-info p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.5rem; }
 #drheitor .service-tag { display: inline-block; background: var(--ouro-light); color: #7a5520; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 50px; }
 
-#btn-mob {display:none;  background: linear-gradient(135deg,#0a5c3f 0%,#0f7a52 100%);}
-#btn-pc {display:inline-block;}
+#drheitor .btn-wamob {display:none!important;  background: linear-gradient(135deg,#0a5c3f 0%,#0f7a52 100%)!important;}
+#drheitor .btn-wapc {display:inline-block!important; }
 
 /* CONTACT */
 #drheitor .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
@@ -254,8 +254,8 @@
 #drheitor .page-hero { padding: 70px 20px 50px !important; }
 #drheitor footer { padding: 32px 20px !important; } 
 
-#btn-pc {display:none;}
-#btn-mob {display:inline-block;}
+#drheitor .btn-wapc {display:none!important;}
+#drheitor .btn-wamob {display:inline-block!important;}
 }
 </style>
 </head>
@@ -585,12 +585,12 @@
            </div>
 
           <div style="display:grid; place-items:center;">
-               <a href="#" class="btn-primary" id="btn-pc" onclick="drShowPage('contato'); return false;">
+               <a href="#" class="btn-primary btn-wapc" onclick="drShowPage('contato'); return false;">
                       <span class="lang-pt">Solicitar Atendimento Agora</span>
                       <span class="lang-en">Request an Appointment Now</span>
                </a>
 
-               <a class="btn-primary" id="btn-mob">
+               <a class="btn-primary btn-wamob">
                    <i class="fa fa-whatsapp" style="font-size: 26px;color: white;padding-right: 5px"></i>
                     <span class="lang-pt">Solicitar Atendimento Agora</span>
                     <span class="lang-en">Request an Appointment Now</span>
